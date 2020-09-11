@@ -1,0 +1,14 @@
+.bckgrnd {
+    background-color: white;
+    padding: 30%;
+    position: relative;
+}
+.circle {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: red;
+    top: 25%;
+    left: 33%;
+}

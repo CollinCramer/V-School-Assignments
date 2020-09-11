@@ -1,0 +1,25 @@
+.madagascar {
+    padding: 30%;
+    background-color: white;
+    position: relative;
+}
+.madagascar:before {
+    content: "";
+    width: 66%;
+    height: 50%;
+    background-color: red;
+    right: 0;
+    top: 0;
+    position: absolute;
+
+}
+.madagascar::after {
+    content: "";
+    width: 66%;
+    height: 50%;
+    background-color: green;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
+}

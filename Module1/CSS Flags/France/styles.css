@@ -1,0 +1,21 @@
+body {
+    background-color: white;
+    
+}
+.blue {
+    width: 33.33%;
+    height: 100%;
+    background-color: royalblue;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    
+}
+.red {
+    width: 33.33%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 8px;
+    right: 0;
+}

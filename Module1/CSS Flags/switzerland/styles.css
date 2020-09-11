@@ -1,0 +1,21 @@
+.Switz {
+    padding: 30%;
+    background-color: red;
+    position: relative;
+}
+.cross {
+    background-color: white;
+    position: absolute;
+    height: 150px;
+    width: 500px;
+    top: 40%;
+    left: 33%;
+}
+.cross2 {
+    background-color: white;
+    position: absolute;
+    height: 500px;
+    width: 150px;
+    top: 20%;
+    left: 45%;
+}
