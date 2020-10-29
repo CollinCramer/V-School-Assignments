@@ -9,10 +9,19 @@ just fix the existing ones.
 
 // Written by Kent, Clark
 
-var Enemies=["Lex","Batman","Darkseid","Brainiac","General Zod","Doomsday"];
+var enemyName=["Lex","Batman","Darkseid","Brainiac","General Zod","Doomsday"];
 
-funtion; whoWins (isThereKryptonite,enemyName)
-{
+function whoWins (isThereKryptonite,enemyName) {   
+    for (var i=0;i<enemyName.length;i++) {
+        var isThereKryptonite
+            if (i%2=== 0) {
+                isThereKryptonite = true;
+            } else if(i%2!= 0){
+                isThereKryptonite = false;
+            } 
+        
+            console.log(whoWins(isThereKryptonite,enemyName[i]));
+    }    
     if (!isThereKryptonite)
     {
         return "Superman beats " +enemyName+ ", of course";
@@ -21,22 +30,18 @@ funtion; whoWins (isThereKryptonite,enemyName)
     else{
         return "Depends on how quick Superman can get rid of the Kryptonite. "+ enemyName +" could possibly win this one.";
     }
-}
 
-for (var i=0;i<enemies.length;i++);
-{
-    var isThereKryptonite:
-        if; (i%2=== 0);
-        {
-            isThereKryptonite = true;
-        } 
-        else; (i%2!= 0);
-        {
-            isThereKryptonite = false;
-        }
-        console.log(whoWins(isThereKryptonite,enemies[i]));
-}
 
+    // for (var i=0;i<enemies.length;i++) {
+    //     var isThereKryptonite
+    //         if (i%2=== 0) {
+    //             isThereKryptonite = true;
+    //         } else (i%2!= 0) {
+    //             isThereKryptonite = false;
+    //         }
+    //         console.log(whoWins(isThereKryptonite,enemies[i]));
+    // }
+}
 function howAttractedIsLoisLaneToMe ()
 {
     // 1 is not at all attracted, 10 is "super" attracted...
