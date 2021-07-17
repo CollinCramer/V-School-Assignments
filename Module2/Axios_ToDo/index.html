@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <div class="header">
+            <a href="#default" class="logo">Axios Todo List</a>
+            <div class="header-right">
+            
+            </div>
+          </div>
+
+    </head>
+    <body>
+        <form name="todoForm">
+            <input name="title" data-lpignore="true" placeholder="Title"/>
+            <input name="description" data-lpignore="true" placeholder="Description"/>
+            <input name="imgUrl" data-lpignore="true" placeholder="Image Url"/>
+            <button name="submit" onclick="newTodo(event)">Submit</button>
+        </form>
+        
+        <div id="todoList">
+        
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

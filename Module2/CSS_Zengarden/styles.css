@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: url(http://www.csszengarden.com/214/contours-opaque.png);
+}
+
+header {
+    position: static;
+    display: grid;
+    text-align: center;
+    grid-template-areas: 1fr 1fr 1fr 1fr;
+    padding: 15px 0 65px 0;
+    background: url(http://www.csszengarden.com/214/huntington.jpg);
+    
+}
+
+/* add an image in for page logo */
+
+/* Now I will break down the individual headers and style accordingly */
+
+header h1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    /* add in the font and style accordingly*/
+    display: inline-block;
+    position: relative;
+    margin: 15px 0 0 0;
+    padding: 50px 0 5px 0;
+    color: #ffffff;
+
+}
+
+header h2 {
+    font-style: italic;
+    /* I need to find the correct font */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+header h3 {
+    /* I need to find the correct font */
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2em;
+    font-weight: normal;
+  }
+
+  /* This is setting up the grid for the page */
+.divContainer {
+    position: relative;
+    display: grid;
+    grid-template-areas: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: 0;
+  }
+
+.left {
+    color: #1a5952;
+    align-content: center;
+    margin: 0;
+    padding: 40px;
+    align-items: 'center';
+  }
+
+.body1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.body2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.body3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.body4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.body5 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.body6 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+.left h2{
+    /* need to change to correct font */
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+
+/* Formatting the right part of the webpage */
+.right {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    color: #1a5952;
+    background: #edf4f0;
+    margin: 0;
+}
+
+.change-list {
+    margin: 0;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.right h3 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: lighter;
+    color: #809b7e;
+}
+  
+.right h4 {
+    font-family: 'Libre Baskerville', serif; 
+    font-weight: lighter;
+    font-size: .8em;
+}
+
+.designs1 {
+    padding: 25px 25px 15px 15px;
+}
+
+.designs2 {
+    padding: 25px 25px 15px 15px;
+}
+
+.body4 p{
+    font-family: 'Libre Baskerville', serif;   
+    font-weight: normal;
+    color: #1a5952;
+}
+
+.body5 p{
+    font-family: 'Libre Baskerville', serif;   
+    font-weight: normal;
+    color: #1a5952;
+}
+.css-links {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    /* Need to find correct fonts */
+    font-size: 1.2em;
+    font-weight: lighter;
+    padding: 25px 25px 15px 15px;
+    /* Need to find correct color still */
+    background-image: url(http://www.csszengarden.com/214/bamboo.png);
+    overflow: hidden;
+    background-color: seagreen;
+    border-top: solid 1.5px;
+}
+.footer {
+    position: static;
+    display: grid;
+    grid-template-areas: 1fr;
+}
+.empty {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    background-color: #ffffff;
+  }
+
+  .pageauthor {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    font-family: 'Libre Baskerville', serif; 
+    font-size: 2em;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    background: url(http://www.csszengarden.com/214/koi.jpg);
+    background-size: 100%;
+
+  }
+
+header h1::before {
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    content: "";
+    width: 100px;
+    height: 100px;
+    margin: -20px 20px 0 0;
+    background: url(http://www.csszengarden.com/214/enso.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.6;
+}

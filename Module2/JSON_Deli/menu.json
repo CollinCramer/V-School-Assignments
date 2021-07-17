@@ -1,0 +1,72 @@
+{
+    "appetizers": [
+        {
+            "name": "Cheese Stick",
+            "isGlutenFree": false,
+            "ingredients": ["cheese", "breading"],
+            "itemDescription": "Mozzerella Cheese Deep Fried in Peanut Oil"
+        },
+        {
+            "name": "Fresh Baked Bread",
+            "isGlutenFree": false,
+            "ingredients": "contains wheat flour",
+            "itemDescription": "Fresh baked wheat bread, served with a salted butter spread"
+        
+        },
+        {
+            "name": "Jalapeno Poppers",
+            "isGlutenFree": false,
+            "ingredients": ["contains wheat flour", "Jalapeno Peppers", "Pepperjack cheese"],
+            "itemDescription": "Stuffed jalapeno peppers fried in peanut oil" 
+        }
+    ],
+    "sandwitches": [
+        {
+            "name": "Philly Cheese Steak",
+            "isGlutenFree": false,
+            "ingredients": ["cheese", "shredded steak", "onions", "Aus Jus", "Wheat Bread", "Bell Peppers"],
+            "itemDescription": "Classic Philly Style Sandwitch. A House Favorite"
+        },
+        {
+            "name": "Italian Sub",
+            "isGlutenFree": false,
+            "ingredients": ["wheat bread", "Pepperoni", "Salami", "Prosciutto", "Oil and Vinigarrette", "various herbs and seasonings", "cheese of your choice"],
+            "itemDescription": "Italian sub. Just what you would expect from a sandwitch shop"
+        
+        },
+        {
+            "name": "Peanut Butter and Jelly",
+            "isGlutenFree": false,
+            "ingredients": ["White Bread", "Smooth and creamy Peanut Butter", "Seedless Raspberry Jelly"],
+            "itemDescription": "A simple PB&J for those of you who want to relive your childhood"   
+        }
+    ],
+    "Salads": [
+        {
+            "name": "Caesar Salad",
+            "isGlutenFree": true,
+            "ingredients": ["caesar dressing", "iceburg Lettuce", "parmesan cheese"],
+            "itemDescription": "A refreshing and tangy caesar salad"
+        },
+        {
+            "name": "House Salad",
+            "isGlutenFree": true,
+            "ingredients": ["ranch dressing", "iceburg Lettuce", "cheddar cheese", "tomato"],
+            "itemDescription": "A classic take on the house salad. Nice and simple"
+        }
+    ],
+    "Deserts": [
+        {
+            "name": "Chocolate Chip Cookie",
+            "isGlutenFree": false,
+            "ingredients": ["milk chocolate", "other normal cookie ingredients"],
+            "itemDescription": "A chocolate chip cookie just like your Grandma used to make!"
+        },
+        {
+            "name": "Fruit Parfait",
+            "isGlutenFree": true,
+            "ingredients": ["vanilla Yogurt", "strawberry", "blueberry", "raspberry"],
+            "itemDescription": "A healthy alternative that will satisfy your sweet tooth"
+        }
+    ]
+}

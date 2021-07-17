@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Pest Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mario Pest Control</h1>
+    <h2>How many Baddies do you need killed? Fill out the following form and it'll calculate the total for our pest control visit!</h2>
+    <form name="forms">
+        <ul class="badguy" id="firstitem">
+            <li class="badguyname">Goomba</li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/ce/Goomba.PNG" alt="Goomba" style="width:200px; height:200px">
+            </li>
+            <li class="cost">Price: 1 Coin</li>
+            <li>
+                Total:
+                <input type="number" name="goomba" id="goomba">
+            </li>
+        </ul>
+        <ul class="badguy" id="seconditem">
+            <li class="badguyname">Koopa</li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Koopa_Troopa_NSMBU.png" style="width:200px; height:200px">
+            </li>
+            <li class="cost">Price: 3 Coins</li>
+            <li>
+                Total:
+                <input type="number" name="koopa" id="koopa">
+            </li>
+        </ul>
+        <ul class="badguy" id="thirditem">
+            <li class="hammerbro">Hammer Bro</li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/Hammer_Bro.png" style="width:200px; height:200px">
+            </li>
+            <li class="cost">Price: 5 Coins</li>
+            <li>
+                Total:
+                <input type="number" name="hammerbro" id="hammerbro">
+            </li>
+        </ul>
+        <ul class="badguy" id="fourthitem">
+            <li class="wiggler">Wiggler</li>
+            <li>
+                <img src="https://www.mariowiki.com/images/c/cd/DMW-Wiggler.png" style="width:200px; height:200px">
+            </li>
+            <li class="cost">Price: 10 Coins</li>
+            <li>
+                Total:
+                <input type="number" name="wiggler" id="wiggler">
+            </li>
+        </ul>
+        <ul class="badguy" id="fifthitem">
+            <li class="galoomba">Galoomba</li>
+            <li>
+                <img src="https://www.mariowiki.com/images/b/b3/Galoomba_-_Mario_Party_10.png" style="width:200px; height:200px">
+            </li>
+            <li class="cost">Price: 2 Coins</li>
+            <li>
+                Total:
+                <input type="number" name="galoomba" id="galoomba">
+            </li>
+        </ul>
+        <ul class="badguy" id="sixthitem">
+            <li class="cheepcheep">Cheep Cheep</li>
+            <li>
+                <img src="https://www.mariowiki.com/images/thumb/6/63/CheepCheepNSMBU.png/400px-CheepCheepNSMBU.png" style="width:200px; height:200px">
+            </li>
+            <li class="cost">Price: 4 Coins</li>
+            <li>
+                Total:
+                <input type="number" name="cheepcheep" id="cheepcheep">
+            </li>
+        </ul>
+    </form>
+    <p id="total">Total Invoice: </p>
+</body>
+<footer>
+    <ul class="footer">
+        <li>mario@mushroomkingdomexterminators.com</li>
+        <li>mushroomkingdomexterminators.com</li>
+        <li>123 Mushroom blvd, Nintendoland, Japan</li>
+    </ul>
+    <script src="app.js"></script>
+</footer>
+</html>

@@ -15,7 +15,6 @@ function createDropDown(){
     }
     dropDown.addEventListener("change", function(e){
         e.target.parentNode.style.backgroundColor = e.target.value
-    //console.log(e)
     })
     return dropDown
 }

@@ -1,0 +1,61 @@
+body {
+    background-color: grey;
+}
+h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: monospace;
+    border-style: double;
+    background-color: white;
+}
+input {
+    font-size: 20px;
+    text-align: center;
+    border-style: groove;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    display: block;
+    
+}
+button {
+    font-size: 20px;
+    text-align: center;
+    border-style: ridge;
+    padding: 10px;
+    margin: auto;
+    display: block;
+}
+h2 {
+    font-size: 30px;
+    text-align: center;
+    border-style: ridge;
+    background-color: lightgray;
+}
+#addAnswer {
+    color: red;
+    display: block;
+    margin: auto;
+    width: 33%;
+
+
+}
+#subAnswer {
+    color: blue;
+    display: block;
+    margin: auto;
+    width: 33%;
+
+}
+#multAnswer {
+    color: green;
+    display: block;
+    margin: auto;
+    width: 33%;
+}
+#divAnswer {
+    color: purple;
+    display: block;
+    margin: auto;
+    width: 33%;
+}

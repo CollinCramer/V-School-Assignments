@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <h2>Addition</h2>
+    <input type="text" id="num1" value="first number" onfocus="this.value=''">
+    <input type="text" id="num2" value="second number" onfocus="this.value=''">
+    <div></div>
+    &nbsp;&nbsp;
+    <div></div>
+    <button type="button" id = Add onclick="add();">Solution</button>
+    <h2 id="addAnswer">Add Answer</h2>
+    &nbsp;&nbsp;
+    &nbsp;&nbsp;
+
+    <h2>Subtraction</h2>
+    <input type="text" id="num3" value="first number" onfocus="this.value=''">
+    <input type="text" id="num4" value="second number" onfocus="this.value=''">
+    <div></div>
+    &nbsp;&nbsp;
+    <div></div>
+    <button type="button" id = Subtract onclick="subtract();">Solution</button>
+    <h2 id="subAnswer">subAnswer</h2>
+    &nbsp;&nbsp;
+    &nbsp;&nbsp;
+
+    <h2>Multiplication</h2>
+    <input type="text" id="num5" value="first number" onfocus="this.value=''">
+    <input type="text" id="num6" value="second number" onfocus="this.value=''">
+    <div></div>
+    &nbsp;&nbsp;
+    <div></div>
+    <button type="button" id = Multiplication onclick="multiply();">Multiplication</button>
+    <h2 id="multAnswer">multAnswer</h2>
+    &nbsp;&nbsp;
+    &nbsp;&nbsp;
+
+    <h2>Division</h2>
+    <input type="text" id="num7" value="first number" onfocus="this.value=''">
+    <input type="text" id="num8" value="second number" onfocus="this.value=''">
+    <div></div>
+    &nbsp;&nbsp;
+    <div></div>
+    <button type="button" id = Division onclick="divide();">Division</button>
+    <h2 id="divAnswer">divAnswer</h2>
+    <script src="app.js"></script>
+    &nbsp;&nbsp;
+    &nbsp;&nbsp;
+
+</body>
+</html>
