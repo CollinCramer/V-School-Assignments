@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.spot {
+  width: 175px;
+  font-size: 12px;
+  flex: 0 0 auto;         
+  border-style: groove;
+}
+
+.spot--card {
+  display: flex;
+  gap: 20px;
+  
+}
