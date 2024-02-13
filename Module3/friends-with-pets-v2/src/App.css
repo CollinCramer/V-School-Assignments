@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.friend {
+  border-style: groove;
+  display: grid;
+  grid-template-rows: max-content 200px 1fr;
+  width: 400px;
+}
+
+.friend--card {
+  gap: 20px;
+  position: relative;
+}
+
+.name {
+  color: gray;
+}
+.age {
+  font-size: xx-large;
+  font-style: italic;
+}
+
