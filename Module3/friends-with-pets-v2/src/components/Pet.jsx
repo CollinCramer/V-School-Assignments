@@ -1,8 +1,8 @@
 export default function Pet (props) {
-    return (
+    return ( 
         <div>
-            <h3>Name: {props.petName}</h3>
-            <h4>Age: {props.petBreed}</h4>
+            <h3>Name: {props.name}</h3>
+            <h4>Breed: {props.breed}</h4>
         </div>
     )
 

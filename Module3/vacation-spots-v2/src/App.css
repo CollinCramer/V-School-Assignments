@@ -17,3 +17,19 @@
   gap: 20px;
   
 }
+
+.spring {
+  background-color: green;
+}
+
+.summer {
+  background-color: red;
+}
+
+.winter {
+  background-color: aqua;
+}
+
+.fall {
+  background-color: orange;
+}

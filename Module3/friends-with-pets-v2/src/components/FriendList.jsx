@@ -61,11 +61,13 @@ export default function FriendList () {
         }
     ]
     const friend = friends.map((friend) => {
+      console.log(friend)
         return(
             <div className="friend--card">
                 <Friend 
                 name={friend.name}
                 age={friend.age}
+                pets={friend.pets}
                 />
             </div>
         )
