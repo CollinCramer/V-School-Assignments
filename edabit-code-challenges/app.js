@@ -54,4 +54,59 @@ function giveMeSomething(a) {
     )
 }
 
-console.log(giveMeSomething("hello"))
+// console.log(giveMeSomething("hello"))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//6. Write a function that takes two numbers as arguments and returns their sum
+
+function sumOfTwo(a,b) {
+    return (
+        a + b
+    )
+}
+// console.log(sumOfTwo(8,4))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//7. Create a function that takes Length and Width and finds the perimeter of a rectangle
+
+function findPerimeter(length,width) {
+    return (
+        2 * length + width * 2
+    )
+}
+// console.log(findPerimeter(8,24))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//8. Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, otherwise returns false
+
+function lessThanOrEqualToZero (num) {
+    return num <= 0
+}
+
+// console.log(lessThanOrEqualToZero(-4))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//9. Return the first element of an array
+
+function getFirstValue(arr) {
+    return (
+        arr[0]
+    )
+}
+// console.log(getFirstValue("hello", "world"))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//10. give an n-sided polygon n, return the total sum of internal angles in degrees
+
+function sumPolygon(n) {
+    return (
+        (n-2) * 180
+    )
+}
+
+// console.log(sumPolygon(8))
