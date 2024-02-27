@@ -47,4 +47,71 @@ function boolToString(flag) {
         `${flag}`
     )	
 }
-console.log(boolToString(true))
+// console.log(boolToString(true))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//25. Are the numbers equal?
+
+function isSameNum(num1, num2) {
+	return (
+        num1===num2
+    )
+}
+// console.log(isSameNum(4,8))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//26. return the remainder
+
+function remainder(x, y) {
+	return (
+        x % y
+    )
+}
+
+// console.log(remainder(3,4))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//27. convert hours into minutes into seconds
+
+function convert(hours, minutes) {
+    return (
+        (hours * 60 * 60) + (minutes * 60)
+    )
+	
+}
+
+// console.log(convert(1,3))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//28. Football Points
+
+function footballPoints(wins, draws, losses) {
+    return (
+        (wins * 3) + (draws) + (losses - losses)
+    )
+}
+// console.log(footballPoints(3, 2, 4))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//29. Frames per second
+
+function frames(minutes, fps) {
+	return (
+        (minutes * 60) * fps
+    )
+}
+// console.log(frames(10, 25))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//30. Less than 100
+
+function lessThan100(a, b) {
+	return a+b<100 ? true : false;
+}
+console.log(lessThan100(40, 59))
