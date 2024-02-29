@@ -108,3 +108,63 @@ function comp(str1, str2) {
     }
 }
 // console.log(comp("hello", "colli"))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//36. Equality Check
+
+function checkEquality(a,b) {
+    return (
+        a===b
+    )
+}
+// console.log(checkEquality(1,false))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//37. Profitable Gamble
+
+function profitableGamble(prob, prize, pay) {
+	
+	if(prob * prize > pay){
+		return true
+	} else {
+		return false;
+	}
+	
+}
+
+//------------------------------------------------------------------------------------------------------------------
+
+//38. Miserable parody of calculator
+
+// Create a function that will handle simple math expressions. 
+// The input is an expression in the form of a string.
+
+function calculator(str) {
+	return (
+        eval(str)
+    )
+}
+// console.log(calculator("2+2"))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//39. Using arrow functions
+
+arrowFunc = (param) => param
+
+console.log(arrowFunc(3))
+
+//------------------------------------------------------------------------------------------------------------------
+
+//40. Buggy Code
+
+function hasBugs(buggyCode) {
+	if (buggyCode === true) {
+		return 'sad days'
+	} else  {
+		return `it's a good day`
+	}
+}
+console.log(hasBugs(false))
