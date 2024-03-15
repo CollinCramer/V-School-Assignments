@@ -2,6 +2,8 @@ import React from "react";
 import Die from "./Die";
 import { useState } from "react"
 
+//struggling with figuring out how to reset all dice after it runs the random roll 3 times. Will add later
+
 export default function DiceBox (props) {
     const [numbers, setNumbers] = useState([{value:null, isClicked:false},{value:null, isClicked:false},{value:null, isClicked:false},{value:null, isClicked:false},{value:null, isClicked:false},{value:null, isClicked:false}])
     function getRandomNumber() {
