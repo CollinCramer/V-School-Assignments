@@ -8,9 +8,9 @@ export default function Squares () {
     const squareElements = squares.map(square => (
         <div style={{backgroundColor: `${square.backgroundColor}`}} className="box" key={square.id}></div>
     ))
-    function smallTime() {
-        if 
-    }
+    // function smallTime() {
+    //     if 
+    // }
    
     return (
         <div>
