@@ -58,17 +58,101 @@ export default function Squares () {
     // set squares to our new array
     setSquares(squaresPurple)
    }
+   function leftBlue() {
+    const leftBlueSquare = squares.map((square, index)=>{
+        let backgroundColor = square.backgroundColor
+        if (index===2) {
+            backgroundColor = "blue"
+        }
+        return {
+            ...square,
+            backgroundColor:backgroundColor
+        }
+    })
+    setSquares(leftBlueSquare)
+    }
+
+   function rightBlue() {
+    const rightBlueSquare = squares.map((square, index)=>{
+        let backgroundColor = square.backgroundColor
+        if (index===3) {
+            backgroundColor = "blue"
+        }
+        return {
+            ...square,
+            backgroundColor:backgroundColor
+        }
+    })
+    setSquares(rightBlueSquare)
+    }
+
+    function firstOrange() {
+        const firstOrangeSquare = squares.map((square, index)=>{
+            let backgroundColor = square.backgroundColor
+            if (index===0) {
+                backgroundColor = "orange"
+            }
+            return {
+                ...square,
+                backgroundColor:backgroundColor
+            }
+        })
+        setSquares(firstOrangeSquare)
+        }
+    function secondGreen() {
+        const secondGreenSquare = squares.map((square, index)=>{
+            let backgroundColor = square.backgroundColor
+            if (index===1) {
+                backgroundColor = "green"
+            }
+            return {
+                ...square,
+                backgroundColor:backgroundColor
+            }
+        })
+        setSquares(secondGreenSquare)
+        }
+    function thirdRed() {
+        const thirdRedSquare = squares.map((square, index)=>{
+            let backgroundColor = square.backgroundColor
+            if (index===2) {
+                backgroundColor = "red"
+            }
+            return {
+                ...square,
+                backgroundColor:backgroundColor
+            }
+        })
+        setSquares(thirdRedSquare)
+        }
+    function fourthPink() {
+        const fourthPinkSquare = squares.map((square, index)=>{
+            let backgroundColor = square.backgroundColor
+            if (index===3) {
+                backgroundColor = "hotpink"
+            }
+            return {
+                ...square,
+                backgroundColor:backgroundColor
+            }
+        })
+            setSquares(fourthPinkSquare)
+            }
+    // function buttonSound() {
+    //     const audio = new Audio()
+    // }
     return (
         <div>
             {squareElements}
             <div className="buttons--container">
                 <button onClick={smallTime}>Small Time DJ</button>
                 <button onClick={partyDj}>Party DJ</button>
-                <button>Professional DJ</button>
-                <button>Big Time 1</button>
-                <button>Big Time 2</button>
-                <button>Big Time 3</button>
-                <button>Big Time 4</button>
+                <button onClick={leftBlue}>Left Blue</button>
+                <button onClick={rightBlue}>Right Blue</button>
+                <button onClick={firstOrange}>Big Time 1</button>
+                <button onClick={secondGreen}>Big Time 2</button>
+                <button onClick={thirdRed}>Big Time 3</button>
+                <button onClick={fourthPink}>Big Time 4</button>
                 <button>Sound!</button>
             </div>
         </div>
