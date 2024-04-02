@@ -47,9 +47,9 @@ function App() {
         </button>
         <ol>
          {submissions.map((element) => {
-          return (
+          return 
             <li>{element}</li>
-          )
+          
          })}
         </ol>
       </form>
