@@ -1,17 +1,24 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Form() {
 
     const [randMeme, setRandMeme] = React.useState({
         topText:"",
         bottomText:"",
-        randomImage:""
+        randomImage:"",
+        id: "",
     })
+
+    uuidv4();
+    console.log(uuidv4())
     // get random image data from API
 
     const [allMemes, setAllMemes] = React.useState([])
 
     const [submittedMemes, setSubmittedMemes] = React.useState([])
+
+
 
     React.useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
@@ -60,22 +67,27 @@ export default function Form() {
 
         const submittedValue=[...submittedMemes]
 
-        submittedValue.push(toBeSubmitted)
+        submittedValue.push({...toBeSubmitted, id: uuidv4()})
 
         setSubmittedMemes(submittedValue)
 
+        console.log(submittedMemes)
+
     }
-    // function createRandomMeme() {
-    //     submittedMemes.map(() => {
-    //         <div>
-    //             <img>{submittedMemes.url}</img>
-    //             <h4>{submittedMemes.topText}</h4>
-    //             <h4>{submittedMemes.bottomText}</h4>
-    //             <button>Delete Meme</button>
-    //         </div>
-    //     })
-    // }
-    // button to delete random meme from the list
+    console.log(submittedMemes)
+
+    function deleteMeme(id) {
+        console.log()
+        const editMemeList = submittedMemes.filter((meme) => {
+            console.log(submittedMemes)
+            if (meme.id === id) {
+                return false
+            }
+            return true
+           
+        })
+        setSubmittedMemes(editMemeList)
+    }
 
 
     return (
@@ -95,25 +107,35 @@ export default function Form() {
                 >
 
                 </input>
-                <button type="button" className="form--button" onClick={submitToList}>Save Your Meme!</button>
+                <button type="button" className="form--button"  onClick={submitToList}>Save Your Meme!</button>
             </form>
-            <div className="meme--container">
-                <button className="form--button" onClick={randomClick}>Get New Meme Image!</button>
-                <div className="meme">
-                    <img className="meme--image" src={randMeme.randomImage}></img>
-                    <h4>{randMeme.topText}</h4>
-                    <h4>{randMeme.bottomText}</h4>
+            <div className="meme">
+                <div className="meme--container">
+                    <button className="form--button" onClick={randomClick}>Get New Meme Image!</button>
+                    <div className="meme">
+                        <img className="meme--image" src={randMeme.randomImage}></img>
+                        <h4 className="meme--text top">{randMeme.topText}</h4>
+                        <h4 className="meme--text bottom">{randMeme.bottomText}</h4>
+                    </div>
                 </div>
             </div>
             <ol>
+                {/* mapping to create new list items from the submittedMemes array */}
                 {submittedMemes.map((element) => {
                     return (
-                    <div>
-                      <img src={element.randomImage}></img>
-                      <h4>{element.topText}</h4>
-                      <h4>{element.bottomText}</h4>
-                      <button>Delete Meme</button>
-                 </div>
+                    <div className="saved--memes">
+                      <div className="meme">  
+                        <div className="meme--container">
+                            <img className="meme--image" src={element.randomImage}></img>
+                            <h4 className="meme--text top">{element.topText}</h4>
+                            <h4 className="meme--text bottom">{element.bottomText}</h4>
+                        </div>
+                      </div>
+                      <div className="button-container">
+                        <button className="delete" onClick={deleteMeme}>Delete Meme</button>
+                        <button className="delete">Edit Meme</button>
+                      </div>
+                    </div>
                     )
 
                 })}
