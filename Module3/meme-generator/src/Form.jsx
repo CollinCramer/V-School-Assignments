@@ -11,12 +11,14 @@ export default function Form() {
     })
 
     uuidv4();
-    console.log(uuidv4())
+    // console.log(uuidv4())
     // get random image data from API
 
     const [allMemes, setAllMemes] = React.useState([])
 
     const [submittedMemes, setSubmittedMemes] = React.useState([])
+
+    const [toggle1, setToggle1] = React.useState(false)
 
 
 
@@ -71,16 +73,16 @@ export default function Form() {
 
         setSubmittedMemes(submittedValue)
 
-        console.log(submittedMemes)
+        // console.log(submittedMemes)
 
     }
-    console.log(submittedMemes)
+    // console.log(submittedMemes)
 
-    function deleteMeme(id) {
+    function deleteMeme() {
         console.log()
         const editMemeList = submittedMemes.filter((meme) => {
-            console.log(submittedMemes)
-            if (meme.id === id) {
+            console.log(meme.id)
+            if (meme.id === meme.id) {
                 return false
             }
             return true
@@ -88,6 +90,8 @@ export default function Form() {
         })
         setSubmittedMemes(editMemeList)
     }
+
+
 
 
     return (
@@ -133,7 +137,18 @@ export default function Form() {
                       </div>
                       <div className="button-container">
                         <button className="delete" onClick={deleteMeme}>Delete Meme</button>
-                        <button className="delete">Edit Meme</button>
+                        <button className="delete"
+                        onClick={() => setToggle1((prev) => !prev)}
+                        >Edit Meme</button>
+                        {toggle1 ?
+                            <>
+                            </>
+                            :
+                            <form>
+                                <input placeholder="Top Text"/>
+                                <input placeholder="Bottom Text"/>
+                                <button>Save</button>
+                            </form>}
                       </div>
                     </div>
                     )
