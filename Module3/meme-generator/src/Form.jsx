@@ -19,9 +19,7 @@ export default function Form() {
 
     const [submittedMemes, setSubmittedMemes] = React.useState([])
 
-
-
-
+    // fetch request to set state with data from API
     React.useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
         .then(res => res.json())
@@ -33,8 +31,9 @@ export default function Form() {
         if (allMemes.length > 0 ){
         randomMemeImage()
         }
-
+        // dependency array so this function will run when the All Memes state changes, as opposed to whenever the page re-renders
     }, [allMemes])
+
     // set state as the random image
     function randomMemeImage() {
         //get a random number value
@@ -48,12 +47,15 @@ export default function Form() {
         }))
 
     }
+    // will update state any time there is a change to the form elements
     function handleChange(event) {
         const {name, value} = event.target
         setRandMeme(prevMeme => ({
             ...prevMeme,
             [name]: value
         }))
+
+   
     }
     console.log(allMemes, randMeme)
 
@@ -73,8 +75,7 @@ export default function Form() {
 
         setSubmittedMemes(submittedValue)
 
-        // console.log(submittedMemes)
-
+     
     }
     // console.log(submittedMemes)
 
@@ -90,7 +91,7 @@ export default function Form() {
         })
         setSubmittedMemes(editMemeList)
     }
-
+    
     function editMeme(memeToEdit) {
         const edittedList = submittedMemes.map((meme) => {
             if (meme.id === memeToEdit.id) {
@@ -101,9 +102,6 @@ export default function Form() {
         })
         setSubmittedMemes(edittedList)
     }
-
-
-
 
     return (
         <main>
