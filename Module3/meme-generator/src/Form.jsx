@@ -1,5 +1,6 @@
 import React from "react";
 import { v4 as uuidv4 } from 'uuid';
+import Meme from "./Meme";
 
 export default function Form() {
 
@@ -18,7 +19,6 @@ export default function Form() {
 
     const [submittedMemes, setSubmittedMemes] = React.useState([])
 
-    const [toggle1, setToggle1] = React.useState(false)
 
 
 
@@ -78,17 +78,28 @@ export default function Form() {
     }
     // console.log(submittedMemes)
 
-    function deleteMeme() {
+    function deleteMeme(id) {
         console.log()
         const editMemeList = submittedMemes.filter((meme) => {
             console.log(meme.id)
-            if (meme.id === meme.id) {
+            if (meme.id === id) {
                 return false
             }
             return true
            
         })
         setSubmittedMemes(editMemeList)
+    }
+
+    function editMeme(memeToEdit) {
+        const edittedList = submittedMemes.map((meme) => {
+            if (meme.id === memeToEdit.id) {
+                // return the edited meme
+                return memeToEdit
+            }
+            return meme
+        })
+        setSubmittedMemes(edittedList)
     }
 
 
@@ -127,30 +138,14 @@ export default function Form() {
                 {/* mapping to create new list items from the submittedMemes array */}
                 {submittedMemes.map((element) => {
                     return (
-                    <div className="saved--memes">
-                      <div className="meme">  
-                        <div className="meme--container">
-                            <img className="meme--image" src={element.randomImage}></img>
-                            <h4 className="meme--text top">{element.topText}</h4>
-                            <h4 className="meme--text bottom">{element.bottomText}</h4>
-                        </div>
-                      </div>
-                      <div className="button-container">
-                        <button className="delete" onClick={deleteMeme}>Delete Meme</button>
-                        <button className="delete"
-                        onClick={() => setToggle1((prev) => !prev)}
-                        >Edit Meme</button>
-                        {toggle1 ?
-                            <>
-                            </>
-                            :
-                            <form>
-                                <input placeholder="Top Text"/>
-                                <input placeholder="Bottom Text"/>
-                                <button>Save</button>
-                            </form>}
-                      </div>
-                    </div>
+                        <Meme 
+                            randomImage={element.randomImage}
+                            topText={element.topText}
+                            bottomText={element.bottomText}
+                            id={element.id}
+                            handleDelete={deleteMeme}
+                            handleEdit={editMeme}
+                        />
                     )
 
                 })}
