@@ -1,13 +1,18 @@
-import { useState } from 'react'
-
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import { AppContextProvider } from './AppContext';
+import FormContents from './FormContents';
+import UglyList from './UglyList';
 
 function App() {
 
 
   return (
     <>
-      <h1>Hello World</h1>
+      <AppContextProvider>
+        <FormContents />
+        <UglyList />
+      </AppContextProvider>
     </>
   )
 }
