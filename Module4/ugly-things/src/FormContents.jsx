@@ -6,25 +6,30 @@ export default function FormContents(props) {
 
     return (
         <form onSubmit={handleSubmit}>
+
             <input type="text"
             placeholder="Thing"
             onChange={handleChange}
             name="title"
             value={title}>
             </input>
+
             <input type="text"
             placeholder="Why it's Ugly"
             name="description"
             onChange={handleChange}
             value={description}>
             </input>
+
             <input type="text"
             placeholder="image link"
             name="imgUrl"
             onChange={handleChange}
             value={imgUrl}>
             </input>
-            <button type="button">Submit Ugly Thing</button>
+
+            <button type="button" onClick={handleSubmit}>Submit Ugly Thing</button>
+
         </form>
     )
 }

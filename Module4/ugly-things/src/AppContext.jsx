@@ -22,12 +22,15 @@ function AppContextProvider(props) {
         // no id property because it is done automatically on submission to the API
     })
 
+    // simple counter State for dependency array
+    const [dependencyArray, setDependencyArray] = useState(0)
+
     // Get data from API and submit to my uglyThings State
     // useEffect hook to make this run on every render/ update
     React.useEffect(() => {
         axios.get("https://api.vschool.io/collincramer/thing")
-            .then(response => {
-                setUglyThings(response.data.map(ugly => {
+            .then(res => {
+                setUglyThings(res.data.map(ugly => {
                     return {
                         // return the values for every object in the ugly array
                         title: ugly.title,
@@ -40,7 +43,7 @@ function AppContextProvider(props) {
                 )
             )})
     // dependency array. If it's empty the useEffect will only occur once on render. Prevents infinite loop
-    }, [])
+    }, [dependencyArray])
     console.log(uglyThings)
     // console log works. uglyThings looks like this
     // (3) [{…}, {…}, {…}]
@@ -52,6 +55,8 @@ function AppContextProvider(props) {
         description={uglyItem.description}
         imgUrl={uglyItem.imgUrl}
         _id={uglyItem._id}
+        // have to declare my handleDelete function here to pass it to the ugly component as props
+        handleDelete={handleDelete}
         
         />
     }))
@@ -74,21 +79,35 @@ function AppContextProvider(props) {
     const description= formData.description
     const imgUrl = formData.imgUrl
 
-    // handleSubmit to add new objects to the array on the API
-
+    //    handle submit did not work until I made a new state to be a dependency array... I don't know why. Ask about it in the assignment review
     function handleSubmit(event) {
-        // stops the whole page from rerendering on submit, which is the default behavior
-        // event.preventDefault()
+        event.preventDefault()
+
+        //send the info to API
         axios.post("https://api.vschool.io/collincramer/thing", formData)
+        // when it posts to the API, it will then increase the dependency array State by 1
+            .then(res => {
+                setDependencyArray(depend => depend + 1)
+            })
             .catch(err => console.log(err))
+            // this will run after to clear the values of the form
+            setFormData({
+                title: "",
+                description: "",
+                imgUrl: ""
+            })
+    }
 
-        // will clear the form inputs upon submission
-        setFormData({
-            title:"",
-            description:"",
-            imgUrl:"",
+    // Delete request to remove an item from the API. Also change the dependency array State to cause the page to rerender
+
+    function handleDelete(id) {
+        // delete request to the API. Need to use string interpolation to pass the id
+        axios.delete(`https://api.vschool.io/collincramer/thing/${id}`)
+        .then(res => {
+            // decrease the value of the State by 1
+            setDependencyArray(depend => depend - 1)
         })
-
+        .catch(err => console.log(err))
     }
 
 
@@ -96,13 +115,14 @@ function AppContextProvider(props) {
     return (
 
         <AppContext.Provider value={{
-            // props to be passed down to children elements
+            // props to be passed down to children elements. can also pass down functions
             ugly,
             handleChange,
             title,
             description,
             imgUrl,
             handleSubmit,
+            handleDelete,
         }}>
             {props.children}
         </AppContext.Provider>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+
 
 export default function Ugly(props) {
 
+// tried to pass down a handleDelete function with Context, but it didn't work
     return (
         <div className="ugly--container">
             <img src={props.imgUrl}></img>
@@ -14,7 +16,7 @@ export default function Ugly(props) {
                     <input type="text" placeholder="Edit Title"></input>
                     <input type="text" placeholder="Edit Description"></input>
                     <button type="button">Submit Changes</button>
-                    <button type="button">Remove Ugly Thing</button>
+                    <button type="button" onClick={() => props.handleDelete(props._id)}>Remove Ugly Thing</button>
                 </form>
             </div>
         </div>
