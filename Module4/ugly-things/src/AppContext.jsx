@@ -22,6 +22,12 @@ function AppContextProvider(props) {
         // no id property because it is done automatically on submission to the API
     })
 
+    const [editData, setEditData] = useState({
+        title:"",
+        description:"",
+        imgUrl:"",
+    })
+
     // simple counter State for dependency array
     const [dependencyArray, setDependencyArray] = useState(0)
 
@@ -79,7 +85,7 @@ function AppContextProvider(props) {
     const description= formData.description
     const imgUrl = formData.imgUrl
 
-    //    handle submit did not work until I made a new state to be a dependency array... I don't know why. Ask about it in the assignment review
+    // handle submit had to change my dependency array to get the useEffect to run again and cause the page to rerender
     function handleSubmit(event) {
         event.preventDefault()
 
@@ -110,7 +116,16 @@ function AppContextProvider(props) {
         .catch(err => console.log(err))
     }
 
+    function handleEdit(uglyThing) {
+        console.log(uglyThing)
+        axios.put(`https://api.vschool.io/collincramer/thing/${uglyThing._id}`, uglyThing)
+        .then(res => {
+            setDependencyArray(dep => dep + 1)
+        })
+        .catch(err => console.log(err))
 
+
+    }
 
     return (
 
@@ -123,6 +138,7 @@ function AppContextProvider(props) {
             imgUrl,
             handleSubmit,
             handleDelete,
+            handleEdit,
         }}>
             {props.children}
         </AppContext.Provider>
