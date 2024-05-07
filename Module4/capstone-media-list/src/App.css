@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+body {
+	padding: 0;
+	margin: 0;
+  overflow: hidden;
+  background-color: #353535;
+}
+.dark {
+  background-color: #353535;
+}
+.dark--header {
+  position: relative;
+	height: 10px;
+	background: linear-gradient(141deg, #390099 0%, #9e0059 40%, #ff0054 90%);
+  margin: 0;
+  padding: 0;
+}
+.dark--header--text--container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.dark--header--text {
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  font-size: 4vw;
+  font-weight: 300;
+	text-transform: uppercase;
+}
+
+.dark--footer {
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  background: linear-gradient(141deg, #390099 0%, #9e0059 40%, #ff0054 90%);
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.dark--main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark--main--text {
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  font-size: 3vw;
+  font-weight: 200;
+  display: block;
+}
+
+.dark--main--buttons {
+  padding: 7px, 7px, 7px, 7px;
+}
+
+.dark--button--container {
+  display: inline-flex;
+  
+}
+
+
+/* Here are the light mode components */
+.light {
+  background-color: #d9d9d9;
+  color: 353535;
+}
+.light--header {
+  position: relative;
+	height: 10px;
+	background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%);
+  margin: 0;
+  padding: 0;
+}
+.light--header--text--container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.light--header--text {
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  font-size: 4vw;
+  font-weight: 300;
+	text-transform: uppercase;
+}
