@@ -1,6 +1,5 @@
 
 {
-    "access_token": "rtx5koezya7jtv3yx74nsz1pzaviut",
-    "expires_in": 5544573,
-    "token_type": "bearer"
+    User-id: "c78267abfd80f486bed47560c10baa57",
+    Bearer: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNzgyNjdhYmZkODBmNDg2YmVkNDc1NjBjMTBiYWE1NyIsInN1YiI6IjY2M2ZkMjU1ZGM2ZGE4ZDJmYjdlOGRiZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.haKBbwDkarR7NK4Va09wEa0KifR1a170Azc9-pj2dwk"
 }

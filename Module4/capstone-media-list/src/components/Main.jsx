@@ -9,10 +9,10 @@ export default function Main() {
 
     return (
         <div className={`${color}--main`}>
-            <h3 className={`${color}--main--text`}>Welcome! Click the buttons to see my Top 10's</h3>
+            <h3 className={`${color}--main--text`}>Welcome! Click the buttons to see Top 10's</h3>
             <div className={`${color}--button--container`}>
-                <button type="button" className={`${color}--buttons`}>Video Games</button>
-                <button type="button" className={`${color}--buttons`}>Movies</button>
+                <button type="button" className={`${color}--buttons`} onClick={() => navigate("/tv")}>Get Most Popular TV Shows</button>
+                <button type="button" className={`${color}--buttons`} onClick={() => navigate("/movies")}>Get Most Popular Movies</button>
             </div>
         </div>
     )
