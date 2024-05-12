@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Movie from "./Movie";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Movies() {
 
-    const [tv, setTv] = useState([{
+    const navigate =  useNavigate()
+
+    const [movies, setMovies] = useState([{
         original_title:"",
         overview:"",
         popularity:"",
@@ -23,7 +27,8 @@ export default function Movies() {
             }
         })
             .then(res => {
-                setTv(res.data.map(show => {
+                console.log(res)
+                setMovies(res.data.results.map(show => {
                     return {
                         original_title: show.original_title,
                         overview: show.overview,
@@ -34,14 +39,36 @@ export default function Movies() {
                     }
 
                 })),
-                console.log(tv)
+                console.log(movies)
     })},[])
-    console.log(tv)
+    console.log(movies)
 
 
     return (
-        <div>
-            <h1>Movie Page</h1>
-        </div>
+        <main>
+            <div className="button--container">
+                <button onClick={() => navigate("/")}>Home</button>
+                <button onClick={() => navigate("/tv")}>Most Popular TV</button>
+                <button>Random Movie</button>
+            </div>
+            <div className="container">
+                <h1 className="movie--header">Most Popular Movies</h1>
+            <ol>
+                {movies.map((element) => {
+                    return (
+                        <Movie
+                            poster_path={element.poster_path}
+                            original_title={element.original_title}
+                            overview={element.overview}
+                            popularity={element.popularity}
+                            genres={element.genres}
+                            vote_average={element.vote_average}
+                        />
+                    )
+
+                })}
+            </ol>
+            </div>
+        </main>
     )
 }

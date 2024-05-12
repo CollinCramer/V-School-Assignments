@@ -3,12 +3,12 @@ import { ThemeContext } from "../ThemeContext";
 
 export default function Footer() {
 
-    const {color} = useContext(ThemeContext)
+    const {color, toggleTheme } = useContext(ThemeContext)
 
     return (
-        <div>
+        <div className="footer--container">
             <div className="footer--button--container">
-                <button className={`footer--button`}>Change Theme</button>
+                <button className={`footer--button`} onClick={toggleTheme}>Change Theme</button>
             </div>
             <div className={`${color}--footer`}></div>
         </div>
