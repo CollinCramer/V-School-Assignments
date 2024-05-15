@@ -5,17 +5,17 @@ export default function Header() {
 
     return (
     <div className="header">
-        <ul className="list--container">
+        <nav className="list--container">
             <Link to = "/" className = "link">
-                <li className="list">Home</li>
+                Home   /
             </Link>
             <Link to = "/about" className="link">
-                <li className="list">About</li>
+                About   /
             </Link>
             <Link to = "/contact" className="link">
-                <li className="list">Contact Us</li>
+                Contact Us   /
             </Link>
-        </ul>
+        </nav>
         <h1>
             React Roto Router
         </h1>

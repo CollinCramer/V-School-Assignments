@@ -30,7 +30,7 @@ export default function Ugly(props) {
             [name]: value
         }))
     }
-// tried to pass down a handleDelete function with Context, but it didn't work
+
     return (
         <div className="ugly--container">
             <img src={props.imgUrl}></img>

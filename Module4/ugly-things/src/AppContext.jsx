@@ -54,7 +54,6 @@ function AppContextProvider(props) {
     // console log works. uglyThings looks like this
     // (3) [{…}, {…}, {…}]
 
-    // ugly is undefined, so I am trying to get it rendered on the page by setting it as a variable and mapping over my ugly state here
     const ugly = (uglyThings.map(uglyItem => {
         return <Ugly 
         title={uglyItem.title}
