@@ -27,6 +27,7 @@ body {
   height: 10vh;
   margin: 0;
   padding: 10px;
+  
 }
 
 .dark--header--text {
@@ -73,26 +74,30 @@ body {
   position: absolute;
   top:55%;
 }
+.dark--button--container--two {
+  position: absolute;
+  top:60%;
+}
 
-
-/* Here are the light mode components */
+/* light mode components */
 .light {
-  background-color: #d9d9d9;
-  color: 353535;
+  background-color: white;
 }
 .light--header {
   position: relative;
 	height: 10px;
-	background: linear-gradient(141deg, #9f0896, #69058d 40%, #db1c67 90%);
+	background: linear-gradient(141deg, #E0B7F4 0%, #F2B5E1 40%, #BFDEF3 90%);
   margin: 0;
   padding: 0;
 }
 .light--header--text--container {
+  position: relative;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 10vh;
   margin: 0;
-  padding: 0;
+  padding: 10px;
+  
 }
 
 .light--header--text {
@@ -102,6 +107,63 @@ body {
   font-weight: 300;
 	text-transform: uppercase;
 }
+
+
+.light--footer {
+  height: 10px;
+  width: 100%;
+  background: linear-gradient(141deg, #E0B7F4 0%, #F2B5E1 40%, #BFDEF3 90%);
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.light--main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF9F6
+  ;
+}
+.light--main--2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF9F6
+  ;
+}
+
+.light--main--text {
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  font-size: 3vw;
+  font-weight: 200;
+  display: block;
+}
+
+.light--main--buttons {
+  padding: 7px, 7px, 7px, 7px;
+}
+
+.light--button--container {
+  position: absolute;
+  top:55%;
+}
+.light--button--container--two {
+  position: absolute;
+  top:60%;
+}
+
+
+
 
 .footer--button--container {
   bottom: 0;          
@@ -122,7 +184,7 @@ body {
     max-width: 1400px;
     padding: 40px;
     margin: 0 auto;
-    padding-top: 40px;
+    padding-top: 100px;
     color: black;
 }
 
@@ -159,12 +221,45 @@ h2 {
 }
 
 .button--container {
-  justify-content: center;
   width: 100%;
+  position: absolute;
+  top: 8%;
+}
+
+.inner {
+  display: inline-block;
 }
 
 .footer--container {
   bottom: 0;
   position: fixed;
   width: 100%;
+}
+
+button {
+
+
+  display: inline-block;
+  outline: 0;
+  appearance: none;
+  padding: 0px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgb(249, 251, 250);
+  border: 1px solid rgb(137, 151, 155);
+  box-shadow: rgb(6 22 33 / 30%) 0px 1px 2px;
+  color: rgb(61, 79, 88);
+  font-size: 14px;
+  font-weight: 400;
+  height: 36px;
+  transition: all 150ms ease-in-out 0s;
+  :hover {
+      color: rgb(61, 79, 88);
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgb(93, 108, 116);
+      box-shadow: rgb(0 0 0 / 30%) 0px 4px 4px, rgb(231 238 236) 0px 0px 0px 3px;
+  }
+
+  
 }

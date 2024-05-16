@@ -4,7 +4,7 @@ import Tv from "./Tv";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../ThemeContext";
 
-export default function Television() {
+export default function TelevisionPopular() {
 
     const navigate =  useNavigate()
     const {color} = useContext(ThemeContext)
@@ -22,7 +22,7 @@ export default function Television() {
 
     React.useEffect(() => {
 
-        axios.get('https://api.themoviedb.org/3/discover/tv?include_adult=false&language=en-US&page=1&sort_by=vote_average.desc&vote_count.gte=200', {
+        axios.get('https://api.themoviedb.org/3/discover/tv?include_adult=false&language=en-US&page=1&sort_by=popularity.desc', {
             headers: {
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNzgyNjdhYmZkODBmNDg2YmVkNDc1NjBjMTBiYWE1NyIsInN1YiI6IjY2M2ZkMjU1ZGM2ZGE4ZDJmYjdlOGRiZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.haKBbwDkarR7NK4Va09wEa0KifR1a170Azc9-pj2dwk",
             }
@@ -55,11 +55,11 @@ export default function Television() {
 
                     <li className="inner"><button onClick={() => navigate("/movies/popular")}>Most Popular Movies</button></li>
 
-                    <li className="inner"><button onClick={() => navigate("/tv/popular")}>Most Popular TV</button></li>
+                    <li className="inner"><button onClick={() => navigate("/tv")}>Top Rated TV</button></li>
                 </ul>
             </div>
             <div className="container">
-                <h1 className={`${color}--movie--header`}>Highest Rated Shows</h1>
+                <h1 className={`${color}--movie--header`}>Most Popular Shows</h1>
             <ol>
                 {tv.map((element) => {
                     return (

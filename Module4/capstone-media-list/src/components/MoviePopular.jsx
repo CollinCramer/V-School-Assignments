@@ -1,16 +1,17 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import Tv from "./Tv";
+import Movie from "./Movie";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../ThemeContext";
 
-export default function Television() {
+
+export default function MoviePopular() {
 
     const navigate =  useNavigate()
     const {color} = useContext(ThemeContext)
 
-    const [tv, setTv] = useState([{
-        original_name:"",
+    const [movies, setMovies] = useState([{
+        original_title:"",
         overview:"",
         popularity:"",
         poster_path:"",
@@ -22,16 +23,16 @@ export default function Television() {
 
     React.useEffect(() => {
 
-        axios.get('https://api.themoviedb.org/3/discover/tv?include_adult=false&language=en-US&page=1&sort_by=vote_average.desc&vote_count.gte=200', {
+        axios.get('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', {
             headers: {
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNzgyNjdhYmZkODBmNDg2YmVkNDc1NjBjMTBiYWE1NyIsInN1YiI6IjY2M2ZkMjU1ZGM2ZGE4ZDJmYjdlOGRiZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.haKBbwDkarR7NK4Va09wEa0KifR1a170Azc9-pj2dwk",
             }
         })
             .then(res => {
                 console.log(res)
-                setTv(res.data.results.map(show => {
+                setMovies(res.data.results.map(show => {
                     return {
-                        original_name: show.original_name,
+                        original_title: show.original_title,
                         overview: show.overview,
                         popularity: show.popularity,
                         poster_path: show.poster_path,
@@ -40,9 +41,9 @@ export default function Television() {
                     }
 
                 })),
-                console.log(tv)
+                console.log(movies)
     })},[])
-    console.log(tv)
+    console.log(movies)
 
 
     return (
@@ -53,18 +54,19 @@ export default function Television() {
 
                     <li className="inner"><button onClick={() => navigate("/movies")}>Top Rated Movies</button></li>
 
-                    <li className="inner"><button onClick={() => navigate("/movies/popular")}>Most Popular Movies</button></li>
+                    <li className="inner"><button onClick={() => navigate("/tv")}>Top Rated TV</button></li>
 
                     <li className="inner"><button onClick={() => navigate("/tv/popular")}>Most Popular TV</button></li>
                 </ul>
             </div>
             <div className="container">
-                <h1 className={`${color}--movie--header`}>Highest Rated Shows</h1>
+                <h1 className={`${color}--movie--header`}>Most Popular Movies</h1>
             <ol>
-                {tv.map((element) => {
+                {movies.map((element) => {
                     return (
-                        <Tv
-                            original_name={element.original_name}
+                        <Movie
+                            poster_path={element.poster_path}
+                            original_title={element.original_title}
                             overview={element.overview}
                             popularity={element.popularity}
                             genres={element.genres}
@@ -77,4 +79,4 @@ export default function Television() {
             </div>
         </main>
     )
-}``
+}

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import Movie from "./Movie";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../ThemeContext";
 
 
 export default function Movies() {
 
     const navigate =  useNavigate()
+    const {color} = useContext(ThemeContext)
 
     const [movies, setMovies] = useState([{
         original_title:"",
@@ -45,14 +47,20 @@ export default function Movies() {
 
 
     return (
-        <main>
-            <div className="button--container">
-                <button onClick={() => navigate("/")}>Home</button>
-                <button onClick={() => navigate("/tv")}>Most Popular TV</button>
-                <button>Random Movie</button>
+        <main className={`${color}--main--two`}>
+         <div className="button--container">
+                <ul className="inner">
+                    <li className="inner"><button onClick={() => navigate("/")}>Home</button></li>
+
+                    <li className="inner"><button onClick={() => navigate("/movies/popular")}>Most Popular Movies</button></li>
+
+                    <li className="inner"><button onClick={() => navigate("/tv")}>Top Rated TV</button></li>
+
+                    <li className="inner"><button onClick={() => navigate("/tv/popular")}>Most Popular TV</button></li>
+                </ul>
             </div>
             <div className="container">
-                <h1 className="movie--header">Most Popular Movies</h1>
+                <h1 className={`${color}--movie--header`}>Top Rated Movies</h1>
             <ol>
                 {movies.map((element) => {
                     return (
