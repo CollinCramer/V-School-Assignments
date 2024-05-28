@@ -32,7 +32,7 @@ bountyRouter.post("/",(req, res) => {
     newBounty._id = uuidv4()
     bounties.push(newBounty)
     console.log(bounties)
-    res.send(`Successfully added ${newBounty.firstname} ${newBounty.lastname} to the database`)
+    res.send(newBounty)
 })
 
 // get by filtered type
