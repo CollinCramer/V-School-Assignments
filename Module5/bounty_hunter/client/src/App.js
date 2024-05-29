@@ -6,6 +6,7 @@ import AddBountyForm from './components/AddBountyForm'
 export default function App() {
 
     const [bounties, setBounties] = useState([])
+    
 
     // get request (ALL)
     function getBounties() {
@@ -23,6 +24,25 @@ export default function App() {
             .catch(err => console.log(err))
     }
 
+    // Delete request (button on each bounty)
+    function deleteBounty(bountyId){
+        axios.delete(`/bounty/${bountyId}`)
+            .then(res => {
+                setBounties(prevBounties => prevBounties.filter(bounty => bounty._id !== bountyId))
+            })
+            .catch(err => console.log(err))
+    }
+
+    // Edit request called onSubmit (button on each bounty which is conditionally rendered)
+    function editBounty(updates, bountyId){
+        axios.put(`/bounty/${bountyId}`, updates)
+        // console.log works. changing to make state update
+        .then(res => {
+            setBounties(prevBounties => prevBounties.map(bounty => bounty._id !== bountyId ? bounty : res.data))
+        })
+        .catch(err => console.log(err))
+    }
+
 
     useEffect(() => {
         getBounties()
@@ -32,9 +52,17 @@ export default function App() {
         <div>
             <div className='bounty--container'>
                 <AddBountyForm 
-                    addBounty = {addBounty}
+                    submit = {addBounty}
+                    btnText = "Add Bounty"
                 />
-                {bounties.map(bounty => <Bounties {...bounty} key={bounty.name}/>)}
+                {bounties.map(bounty => 
+                <Bounties 
+                    {...bounty}
+                    key={bounty.name}
+                    // passing down deleteBounty/editBounty as a prop
+                    deleteBounty={deleteBounty}
+                    editBounty={editBounty}
+                />)}
             </div>
         </div>
     )
