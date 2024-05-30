@@ -12,7 +12,7 @@ export default function App() {
     function getBounties() {
         axios.get("/bounty")
             .then(res => setBounties(res.data))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
     }
 
     // Post Request (FORM)
