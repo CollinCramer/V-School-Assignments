@@ -1,21 +1,8 @@
 const express = require("express")
 const bountyRouter = express.Router()
 const Bounties = require('../models/bounties.js')
-// Dont need uuid now that I have a database. Will delete later after all methods are changed over
-// const { v4: uuidv4 } = require('uuid')
 
 
-
-// commenting out data because its no longer necessary. Will delete after I am sure I don't need it
-
-// const bounties = [
-//     {firstname: "Darth", lastname: "Maul", living: true, totalbounty: 8500000, type: "Sith", _id: uuidv4()},
-//     {firstname: "Savage", lastname: "Opress", living: true, totalbounty: 6500000, type: "Sith", _id: uuidv4()},
-//     {firstname: "Darth", lastname: "Vader", living: true, totalbounty: 9500000, type: "Sith", _id: uuidv4()},
-//     {firstname: "Obi-Wan", lastname: "Kenobi", living: true, totalbounty: 10000000, type: "Jedi", _id: uuidv4()},
-//     {firstname: "Yoda", lastname: "n/a", living: true, totalbounty: 9500000, type: "Jedi", _id: uuidv4()},
-//     {firstname: "Ahsoka", lastname: "Tano", living: true, totalbounty: 8500000, type: "JKedi", _id: uuidv4()},
-// ]
 
 
 
@@ -31,16 +18,15 @@ bountyRouter.get("/", (req, res, next) => {
 })
 
 // get one
-// bountyRouter.get("/:bountyId",(req,res, next) => {
-//     const bountyId = req.params.bountyId
-//     const foundBounty = bounties.find(bounty => bounty._id === bountyId)
-//     if(!foundBounty){
-//         const error = new Error(`Bounty ${bountyId} not found`)
-//         res.status(500)
-//         return next(error)
-//     }
-//     res.status(200).send(foundBounty)
-// })
+bountyRouter.get("/:bountyId", (req,res, next) => {
+    Bounties.findOne({ _id: req.params.bountyId }, (err, foundItem) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(foundItem)
+    }) 
+})
 
 // post one
 bountyRouter.post("/",(req, res, next) => {
