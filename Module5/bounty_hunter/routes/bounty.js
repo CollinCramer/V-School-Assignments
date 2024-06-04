@@ -17,6 +17,16 @@ bountyRouter.get("/", (req, res, next) => {
     })
 })
 
+// bountyRouter.get('/', async(req, res, next) => {
+//     try {
+//         const bounty = await Bounties.find()
+//         return res.status(200).send(bounty)
+//     } catch (err) {
+//         res.status(500)
+//         return next(err)
+//     }
+// })
+
 // get one
 bountyRouter.get("/:bountyId", (req,res, next) => {
     Bounties.findOne({ _id: req.params.bountyId }, (err, foundItem) => {
