@@ -32,6 +32,25 @@ movieRouter.get("/:movieId", async(req,res, next) => {
 // get help on post one asynchronous
 
 // post one
+
+movieRouter.post("/:studioId", async(req, res, next) => {
+    try {
+        req.body.studio = req.params.studioId
+        const newMovie = new Movies(req.body)
+        const saveMovie = await newMovie.save()
+        return res.status(201).send(saveMovie)
+        
+    } catch (error) {
+        res.status(500)
+        return next(err)
+        
+    }
+})
+
+
+
+
+
 movieRouter.post("/:studioId",(req, res, next) => {
     req.body.studio = req.params.studioId
    const newMovie = new Movies(req.body)
