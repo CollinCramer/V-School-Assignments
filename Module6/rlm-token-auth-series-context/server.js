@@ -9,20 +9,16 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 mongoose.connect(
-  'mongodb+srv://collintest:collincramertest@user-authentication.r13fv11.mongodb.net/?retryWrites=true&w=majority&appName=user-authentication',
-
-  (props) => console.log('Connected to the DB', props)
-
+  'mongodb://localhost:27017/user-authentication',
+  () => console.log('Connected to the DB')
 )
 
 app.use('/auth', require('./routes/authRouter.js'))
-// gatekeeper for unauthorized access
-app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] })) // PAYLOAD = req.user
+app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] })) // req.user
 app.use('/api/todo', require('./routes/todoRouter.js'))
 
 app.use((err, req, res, next) => {
   console.log(err)
-  // error thrown if unauthorized access
   if(err.name === "UnauthorizedError"){
     res.status(err.status)
   }

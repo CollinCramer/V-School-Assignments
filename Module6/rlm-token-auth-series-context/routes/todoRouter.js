@@ -2,11 +2,6 @@ const express = require("express")
 const todoRouter = express.Router()
 const Todo = require('../models/todo.js')
 
-
-// use auth._id instead of user._id!!!
-// ________________________________________________________________________________________
-
-
 // Get All Todos
 todoRouter.get("/", (req, res, next) => {
   Todo.find((err, todos) => {
@@ -31,7 +26,6 @@ todoRouter.get("/user", (req, res, next) => {
 
 // Add new Todo
 todoRouter.post("/", (req, res, next) => {
-  // user is equal to the user._id
   req.body.user = req.auth._id
   const newTodo = new Todo(req.body)
   newTodo.save((err, savedTodo) => {
