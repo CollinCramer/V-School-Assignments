@@ -73,14 +73,14 @@ export default function UserProvider(props) {
         }))
     }
 
-    function resetAuthError(){
+    function resetAuthError() {
         setUserState(prevState => ({
             ...prevState,
-            errMsg:""
+            errMsg: ""
         }))
     }
 
-//add media
+    //add media
 
     function addMedia(newMedia) {
         userAxios.post("/api/media", newMedia)
@@ -146,19 +146,38 @@ export default function UserProvider(props) {
 
     // handle upVote
 
-    function upVoteMedia(mediaId, inputs){
-        setUserState(prevUserState => 
-            ({ ...prevUserState, 
-                media: prevUserState.media.map(med => mediaId !== med._id ? med : inputs) }))
+    function upVoteMedia(mediaId, inputs) {
+        console.log(mediaId, inputs)
+        setUserState(prevUserState =>
+        ({
+            ...prevUserState,
+            media: prevUserState.media.map(med => mediaId !== med._id ? med : inputs)
+        }))
     }
 
     //handle downVote
 
-    function downVoteMedia(mediaId, inputs){
-        setUserState(prevUserState => 
-            ({ ...prevUserState, 
-                media: prevUserState.media.map(med => mediaId !== med._id ? med : inputs) }))
+    function downVoteMedia(mediaId, inputs) {
+        setUserState(prevUserState =>
+        ({
+            ...prevUserState,
+            media: prevUserState.media.map(med => mediaId !== med._id ? med : inputs)
+        }))
     }
+
+    // get all Media
+    function getMedia() {
+        axios.get("/api/media")
+            .then(res => setMedia(res.data))
+            .catch(err => console.log(err.response.data.errMsg))
+    }
+    // handle filter
+    function handleFilter(e){
+        if(e.target.value === "reset"){
+            getMedia
+        }
+    }
+
 
     return (
         <UserContext.Provider

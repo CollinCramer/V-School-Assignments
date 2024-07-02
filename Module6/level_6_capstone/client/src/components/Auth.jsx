@@ -36,14 +36,14 @@ export default function Auth() {
     }
 
     // toggle function
-function toggleForm(){
-    setToggle(prev => !prev)
-    resetAuthError()
-}
+    function toggleForm() {
+        setToggle(prev => !prev)
+        resetAuthError()
+    }
 
 
     return (
-        <div className="main">
+        <div className="one">
             <div className="authPage">
                 <h1>Media Archive</h1>
                 {/* toggle for conditional rendering */}
@@ -54,9 +54,11 @@ function toggleForm(){
                             handleSubmit={handleSignup}
                             inputs={inputs}
                             btnText="Register"
-                            errMsg = {errMsg}
+                            errMsg={errMsg}
                         />
-                        <p onClick={toggleForm}>Already a Registered Reviewer?</p>
+                        <p
+                            className='forgot'
+                            onClick={toggleForm}>Already a Registered Reviewer?</p>
                     </>
 
                     :
@@ -67,9 +69,11 @@ function toggleForm(){
                             handleSubmit={handleLogin}
                             inputs={inputs}
                             btnText="Login"
-                            errMsg = {errMsg}
+                            errMsg={errMsg}
                         />
-                        <p onClick={toggleForm}>Not a Registered Reviewer?</p>
+                        <p onClick={toggleForm}
+                            className='forgot'>
+                            Not a Registered Reviewer?</p>
                     </>
                 }
             </div>

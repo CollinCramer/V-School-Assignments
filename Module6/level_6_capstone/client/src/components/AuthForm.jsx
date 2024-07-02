@@ -1,36 +1,37 @@
 import React from 'react'
 
-export default function AuthForm(props){
-  const {
-    handleChange, 
-    handleSubmit, 
-    btnText, 
-    errMsg,
-    inputs: {
-      username, 
-      password
-    } 
-  } = props
-  
-  return (
-    <form onSubmit={handleSubmit}>
-      <input 
-        type="text" 
-        value={username} 
-        name="username" 
-        onChange={handleChange} 
-        placeholder="Username"/>
-      <input 
-        type="text" 
-        value={password} 
-        name="password" 
-        onChange={handleChange} 
-        placeholder="Password"/>
-      <button>{ btnText }</button>
+export default function AuthForm(props) {
+    const {
+        handleChange,
+        handleSubmit,
+        btnText,
+        errMsg,
+        inputs: {
+            username,
+            password
+        }
+    } = props
 
-      {/* adding in a p tag for displaying the error message for issues with login/signup*/}
-      <p>{errMsg}</p>
+    return (
+        <form className='main'
+        onSubmit={handleSubmit}>
+            <input className='un'
+                type="text"
+                value={username}
+                name="username"
+                onChange={handleChange}
+                placeholder="Username" />
+            <input className='pass'
+                type="password"
+                value={password}
+                name="password"
+                onChange={handleChange}
+                placeholder="Password" />
+            <button className='submit'>{btnText}</button>
 
-    </form>
-  )
+            {/* adding in a p tag for displaying the error message for issues with login/signup*/}
+            <p>{errMsg}</p>
+
+        </form>
+    )
 }

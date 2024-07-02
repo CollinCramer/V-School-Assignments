@@ -3,10 +3,14 @@ ________________________________________________________________________________
 
 CSS (low priority)
 
-Get like/dislike to work
-
 Add ability to filter by media type on All Reviews
 
 Only give someone access to add media if they are an admin
 
 Dont let there be duplicate reviews for a single title. If someone is reviewing the same title, add the score to an array and put the average score on the all review card
+
+use a library to get Icons for upvote and downvote
+
+Clean up interface for comments. Make it small and clickable to expand. Also add username who left the comment. Like dislike too?
+
+Add password requirements/ regex / validators in model
