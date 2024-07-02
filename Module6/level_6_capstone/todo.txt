@@ -1,0 +1,12 @@
+Still needs to be done:
+_______________________________________________________________________________________________________________
+
+CSS (low priority)
+
+Get like/dislike to work
+
+Add ability to filter by media type on All Reviews
+
+Only give someone access to add media if they are an admin
+
+Dont let there be duplicate reviews for a single title. If someone is reviewing the same title, add the score to an array and put the average score on the all review card
